@@ -33,3 +33,44 @@
 
 	p.getInfo();
 	p2.getInfo();
+	
+#### 推荐继承方式
+
+	function Person(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.getName = function() {
+		return this.name;
+	};
+
+	Person.prototype.setName = function(name) {
+		this.name = name;
+	};
+
+	Person.prototype.getAge = function() {
+		return this.age;
+	};
+
+	Person.prototype.setAge = function(age) {
+		this.age = age;
+	};
+
+	function Student(name, age, score) {
+		Person.call(this, name, age);
+		this.score = score;
+	}
+
+	Student.prototype = new Person();
+
+	Student.prototype.getScore = function() {
+		return this.score;
+	}
+
+	Student.prototype.setScore = function(score) {
+		this.score = score;
+	}
+
+	var s = new Student("zhangsan", 12, 99);
+	s instanceof Person && s instanceof Student
