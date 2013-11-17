@@ -21,7 +21,7 @@
 		this.username = username;
 		this.password = password;
 
-		if(!Person.prototype.getInfo) {
+		if(!Person.prototype.getInfo) { // 如果第一次调用，往Person对象原型中添加一个getInfo()方法
 			Person.prototype.getInfo = function() {
 				return this.name + ", " + this.password;
 			};
