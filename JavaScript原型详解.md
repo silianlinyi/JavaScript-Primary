@@ -34,7 +34,7 @@
 	p.getInfo();
 	p2.getInfo();
 	
-#### 推荐继承方式
+#### 推荐继承方式（真正实现了继承）
 
 	function Person(name, age) {
 		this.name = name;
